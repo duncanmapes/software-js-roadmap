@@ -1,0 +1,28 @@
+<ul>
+    {{#each items}}
+        {{#compare2 this.type "==" 'marker' }}
+          <li class="marker  
+          {{#if this.first}}first{{/if}}
+           {{#if this.last}}last{{/if}}
+          ">
+            <h2 data-date="{{this.date}}">{{ this.title }}</h2>
+          </li>
+
+        {{ else }} 
+               <li class="event">
+        <div>
+          <h2>Title of Feature</h2>
+          <p>
+            <time datetime="{{this.date}}">{{this.date}}</time>
+            {{this.description}}
+            <a target="_blank" id="" href="#">Click here for details</a>
+          </p>
+        </div>
+      </li>
+        {{/compare2}}
+      
+     
+      
+
+        {{/each}}
+    </ul>
